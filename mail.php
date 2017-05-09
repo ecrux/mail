@@ -1,13 +1,17 @@
- 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+ <!-- 
+	Autor : Edwar Cruz 
+	Este es el código de la función mail, me permite enviar el correo ademas muestra un mensaje de éxito.
+  -->
+
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <?php 
 
 	$para=$_GET['para'];
-	//$g=$_GET['g'];
 	$edad=$_GET['edad'];
 	$asunto=$_GET['asunto'];
 	$mensaje=$_GET['mensaje'];
 
-	
+	// Este es el contenido que se vera en el correo.
 	$html = "<body style='font-family:Arial'>";
 	$html .= $mensaje;
 	$html .= "<br>";
@@ -20,7 +24,7 @@
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-	// More headers
+	// Este es el destinatario.
 	$headers .= 'From: <ecruzh8@gmail.com>' . "\r\n";
 	
 ?>

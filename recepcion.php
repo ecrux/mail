@@ -1,5 +1,9 @@
 <?php 
-	
+	/**
+		Autor : Edwar Cruz
+		Este es mi archivo de Verificación el cual vera el cliente.
+	*/
+
 	$correo=$_GET['correo'];
 	
 	$edad=$_GET['edad'];

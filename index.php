@@ -1,3 +1,9 @@
+<!-- 
+	Autor : Edwar Cruz
+	Este es el archivo principal de mi proyecto, en el se ingresan los parámetros de envio del correo.
+ -->
+
+
 <!DOCTYPE html>
 <html>
 <head>
