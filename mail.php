@@ -5,11 +5,18 @@
 
  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <?php 
-
+	include 'config.php';
 	$para=$_GET['para'];
 	$edad=$_GET['edad'];
 	$asunto=$_GET['asunto'];
 	$mensaje=$_GET['mensaje'];
+
+	$sql="";
+	$sql .= "INSERT INTO tb_usuarios (correo , edad , estado )";
+	$sql .= "value ( '$para' , '$edad' , '0' )";
+	$conexion = mysqli_connect($servidor, $usuario, $clave, $bd);
+	$resultado = $conexion->query($sql);
+	//echo $sql;
 
 	// Este es el contenido que se vera en el correo.
 	$html = "<body style='font-family:Arial'>";
@@ -51,7 +58,8 @@
  			<div class="col-xs-12 col-md-4"></div>
  			<div class="col-xs-12 col-md-4">
 			 	<?php 	
-					mail($para, $asunto, $html, $headers);
+			 		echo "<a href='recepcion.php?correo=". $para . "&edad= ". $edad . "'>localhost/ec/mail/recepcion.php?correo=correo=". $para . "&edad= ". $edad . "</a>";
+					//mail($para, $asunto, $html, $headers);
 			 	?>	
  				<center>
  					<img width="100%" src="img/mail.png">

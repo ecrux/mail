@@ -4,11 +4,17 @@
 		Este es mi archivo de Verificación el cual vera el cliente.
 	*/
 
+	include 'config.php';
 	$correo=$_GET['correo'];
-	
 	$edad=$_GET['edad'];
 
-	
+
+	$sql="";
+	$sql .= "UPDATE tb_usuarios  SET estado = '1' ";
+	$sql .= "Where correo = '$correo'";
+	$conexion = mysqli_connect($servidor, $usuario, $clave, $bd);
+	$resultado = $conexion->query($sql);
+	//echo $sql;
 
 	echo "<br>";
 
